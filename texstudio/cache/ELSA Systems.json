@@ -1,0 +1,29 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/Users/null102/Desktop/ELSA Systems.tex",
+    "labels": [
+    ],
+    "modified": "Tue May 12 21:41:56 2026",
+    "packages": [
+        "#amssymb",
+        "#amsmath",
+        "11pt,a4paper#latex-document",
+        "11pt,a4paper#tex",
+        "#hyperref",
+        "#nameref",
+        "#geometry",
+        "#fontspec",
+        "#xeCJK"
+    ],
+    "refs": [
+    ],
+    "toc": [
+    ],
+    "usercommands": [
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "coc-json": ">=1.9.3",
+    "coc-clangd": ">=0.33.0",
+    "coc-css": ">=2.1.0",
+    "coc-html": ">=1.8.0",
+    "coc-markdownlint": ">=1.36.1",
+    "coc-texlab": ">=3.3.0",
+    "coc-pyright": ">=1.1.409",
+    "coc-emmet": ">=1.1.6"
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": true,
+        "File": "../../Desktop/ELSA Systems.pdf"
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "../../Library/CloudStorage/OneDrive-个人/Projects/sites/null102_zone/build/tex/null102开悟场域/null102开悟场域.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 4,
+                "EditorGroup": 0,
+                "FileName": "../../Desktop/ELSA Systems.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 8
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "../../Library/CloudStorage/OneDrive-个人/Projects/Distillation/LdBeth/plssg/build/tex/My Site/My Site.tex",
+                "FirstLine": 14707,
+                "FoldedLines": "",
+                "Line": 15748
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "../../Library/CloudStorage/OneDrive-个人/Projects/sites/null102_zone/build/tex/null102开悟场域/null102开悟场域.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 20
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": false
+    }
+}

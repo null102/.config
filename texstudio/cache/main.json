@@ -1,0 +1,49 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Futher_On.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Deeper_Tech.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Music_Production.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Jazz.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Abstract.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/README.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Creative_Programming.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Comp_ESP.tex",
+        "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/Acknowledgements.tex"
+    ],
+    "filename": "/Users/null102/Library/CloudStorage/OneDrive-个人/学习进度追踪/2025Spring/Music Tech Thesis/main.tex",
+    "labels": [
+    ],
+    "modified": "Thu May 8 21:12:10 2025",
+    "packages": [
+        "#graphicx",
+        "#dirtree",
+        "#geometry",
+        "#parskip",
+        "14pt#class-report",
+        "14pt#latex-document",
+        "14pt#tex"
+    ],
+    "refs": [
+    ],
+    "toc": [
+        "-1#README#25",
+        "-1#Abstract#26",
+        "-1#Acknowledgements#27",
+        "-1#Music_Production#32",
+        "-1#Creative_Programming#33",
+        "-1#Deeper_Tech#34",
+        "-1#Comp_ESP#35",
+        "-1#Jazz#36",
+        "-1#Futher_On#37"
+    ],
+    "usercommands": [
+        [
+            "\\contentsname",
+            "\\contentsname"
+        ]
+    ]
+}

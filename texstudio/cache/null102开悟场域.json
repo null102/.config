@@ -1,0 +1,48 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/Users/null102/Library/CloudStorage/OneDrive-个人/Projects/sites/null102_zone/build/tex/null102开悟场域/null102开悟场域.tex",
+    "labels": [
+    ],
+    "modified": "Fri May 15 14:57:40 2026",
+    "packages": [
+        "11pt,a4paper#latex-document",
+        "11pt,a4paper#tex",
+        "#fontspec",
+        "#hyperref",
+        "#nameref",
+        "#geometry",
+        "#amssymb",
+        "#amsmath",
+        "#xeCJK"
+    ],
+    "refs": [
+    ],
+    "toc": [
+        "5#祝您浏览愉快！#43",
+        "2#2015mbp#55",
+        "2#Emacs#58",
+        "2#PSP#61",
+        "2#VICE中国#64",
+        "2#五菱宇宙#67",
+        "2#光谷步行街#70",
+        "2#凤凰城之巅#73",
+        "2#姐姐的唇钉#76",
+        "2#小米之家#79",
+        "2#怪物猎人#82",
+        "2#未来之家#85",
+        "2#机械革命#88",
+        "2#比亚迪签约艺术家#91",
+        "2#滑板#94",
+        "2#烟雾动物园#97",
+        "2#苏大游泳馆#100",
+        "2#观前街#103",
+        "2#阿拉巴马超人#106"
+    ],
+    "usercommands": [
+    ]
+}

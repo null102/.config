@@ -1,0 +1,144 @@
+" =====================================================================
+" vimrc (XDG: ~/.config/vim/vimrc)
+" =====================================================================
+
+" ---------- vim-plug ----------
+call plug#begin('~/.config/vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" Auto-installed CoC extensions (language servers + tooling)
+let g:coc_global_extensions = ['coc-clangd', 'coc-pyright', 'coc-json', 'coc-html', 'coc-css', 'coc-emmet', 'coc-markdownlint', 'coc-texlab']
+
+" ---------- Core editor ----------
+set nocompatible
+syntax on
+filetype plugin indent on
+set encoding=utf-8
+set hidden
+set mouse=a
+set backspace=indent,eol,start
+set clipboard=unnamed
+set wildmenu
+set showcmd
+set incsearch
+set hlsearch
+set ignorecase smartcase
+set splitright
+set noswapfile
+
+" absolute line numbers (no relative)
+set number
+set norelativenumber
+
+" make <Esc>... mappings snappy so <M-Tab> via terminal meta doesn't lag
+set ttimeout
+set ttimeoutlen=20
+
+" ---------- Colorscheme ----------
+set background=dark
+if has('termguicolors')
+  set termguicolors
+endif
+let g:gruvbox_contrast_dark = 'hard'
+silent! colorscheme gruvbox
+
+" ---------- NERDTree ----------
+let g:NERDTreeWinSize        = 30      " not too wide, big enough to browse
+let g:NERDTreeMinimalUI      = 1
+let g:NERDTreeDirArrows      = 1
+let g:NERDTreeShowHidden     = 1
+let g:NERDTreeWinPos         = 'left'
+let g:NERDTreeQuitOnOpen     = 0
+
+" Always open NERDTree on launch (terminal vim only), then jump focus to the editor pane
+if !has('gui_running')
+  autocmd VimEnter * NERDTree | wincmd p
+endif
+
+" If NERDTree is the only window left, quit Vim
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" When focused in NERDTree, :q / :q! / :wq should quit the whole Vim session
+autocmd FileType nerdtree cnoreabbrev <buffer> <expr> q  (getcmdtype()==':' && getcmdline()==#'q')   ? 'qa'   : 'q'
+autocmd FileType nerdtree cnoreabbrev <buffer> <expr> q! (getcmdtype()==':' && getcmdline()==#'q!')  ? 'qa!'  : 'q!'
+autocmd FileType nerdtree cnoreabbrev <buffer> <expr> wq (getcmdtype()==':' && getcmdline()==#'wq')  ? 'wqa'  : 'wq'
+
+" Prevent other buffers from replacing NERDTree's window
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+'
+      \ && winnr('$') > 1 |
+      \   let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf |
+      \ endif
+
+" ---------- Option+Tab to swap between NERDTree and editor ----------
+" macOS terminals usually send Option as an ESC-prefix, so we bind several
+" variants to cover Terminal.app, iTerm2 (Esc+ meta), and MacVim/GUI.
+nnoremap <silent> <M-Tab>     :wincmd w<CR>
+nnoremap <silent> <A-Tab>     :wincmd w<CR>
+nnoremap <silent> <Esc><Tab>  :wincmd w<CR>
+inoremap <silent> <M-Tab>     <C-\><C-N>:wincmd w<CR>
+inoremap <silent> <A-Tab>     <C-\><C-N>:wincmd w<CR>
+inoremap <silent> <Esc><Tab>  <C-\><C-N>:wincmd w<CR>
+
+" ---------- CoC (LSP + completion for C, Python, etc.) ----------
+set updatetime=300
+set signcolumn=yes
+set shortmess+=c
+
+" Tab / Shift-Tab to navigate completion popup; <CR> confirms selection
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Trigger completion manually with Ctrl-Space
+inoremap <silent><expr> <C-Space> coc#refresh()
+
+" Navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Hover doc on K
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Rename and code action
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ca <Plug>(coc-codeaction-cursor)
+
+" Jump between diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" ---------- MacVim / GUI only ----------
+" Terminal vim ignores everything in this block (has('gui_running') is 0 there).
+if has('gui_running')
+  " see-through window + background blur
+  set transparency=27
+  set blurradius=5
+
+  " bigger-than-default font (default MacVim is ~h11)
+  set guifont=Menlo:h20
+
+  " roughly 4:3 (W:H), ~70% of the previous 115x36 size
+  set lines=25 columns=80
+endif
