@@ -55,11 +55,10 @@ bindkey '^[[C'  forward-char                      # → moves cursor; if at EOL,
 bindkey '^[f'   forward-word                      # Alt+→ word jump (terminal-dependent)
 bindkey '^[b'   backward-word
 
-# ---------- Prompt (fish-ish: green user, green cwd, > prompt) ----------
-autoload -Uz vcs_info
-zstyle ':vcs_info:git:*' formats ' %F{magenta}(%b)%f'
-precmd() { vcs_info }
-PROMPT='%F{green}%n%f %F{green}%~%f${vcs_info_msg_0_} %F{cyan}❯%f '
+# ---------- Prompt ----------
+# %1~ = current dir only (last segment), with ~ for $HOME
+# swap to %~ for full path with ~, or %2~ for last 2 segments
+PROMPT='%F{cyan}%1~%f %F{green}❯%f '
 
 # ---------- Aliases ----------
 alias ls='ls -G'
@@ -77,9 +76,3 @@ for f in ~/.config/zsh/functions/*.zsh; do
   source "$f"
 done
 
-# ---------- oh-my-zsh (optional; kept off for speed) ----------
-# To enable oh-my-zsh, uncomment and pick a theme/plugins:
-# export ZSH="$HOME/.oh-my-zsh"
-# ZSH_THEME="robbyrussell"
-# plugins=(git)
-# source "$ZSH/oh-my-zsh.sh"

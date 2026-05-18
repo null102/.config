@@ -1,0 +1,79 @@
+# ~/.config/starship.toml — pastel-powerline, lean
+
+add_newline = true
+command_timeout = 1000
+
+format = """
+[](fg:#9A348E)\
+$os\
+$username\
+[](bg:#DA627D fg:#9A348E)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#86BBD8)\
+$cmd_duration\
+[](fg:#86BBD8 bg:#06969A)\
+$time\
+[ ](fg:#06969A)\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "bg:#9A348E fg:#ffffff"
+
+[os.symbols]
+Macos = " "
+Linux = " "
+Ubuntu = " "
+Arch = " "
+
+[username]
+show_always = false
+style_user = "bg:#9A348E fg:#ffffff"
+style_root = "bg:#9A348E fg:#ffffff"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:#DA627D fg:#ffffff"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+".config" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#FCA17D fg:#000000"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#FCA17D fg:#000000"
+format = '[$all_status$ahead_behind ]($style)'
+
+[cmd_duration]
+min_time = 2_000
+style = "bg:#86BBD8 fg:#000000"
+format = '[  $duration ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#06969A fg:#ffffff"
+format = '[ ♥ $time ]($style)'
+
+[character]
+success_symbol = "[❯](bold #A3BE8C)"
+error_symbol = "[❯](bold #BF616A)"
+vicmd_symbol = "[❮](bold #EBCB8B)"
+
+[line_break]
+disabled = false
