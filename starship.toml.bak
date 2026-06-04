@@ -77,3 +77,15 @@ vicmd_symbol = "[❮](bold #EBCB8B)"
 
 [line_break]
 disabled = false
+
+add_newline = false
+
+[directory]
+truncation_length = 3
+
+[git_branch]
+symbol = " "
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"

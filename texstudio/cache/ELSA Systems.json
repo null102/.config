@@ -10,15 +10,15 @@
     ],
     "modified": "Tue May 12 21:41:56 2026",
     "packages": [
+        "#xeCJK",
         "#amssymb",
         "#amsmath",
+        "#geometry",
         "11pt,a4paper#latex-document",
         "11pt,a4paper#tex",
-        "#hyperref",
-        "#nameref",
-        "#geometry",
         "#fontspec",
-        "#xeCJK"
+        "#hyperref",
+        "#nameref"
     ],
     "refs": [
     ],
